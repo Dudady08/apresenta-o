@@ -1,0 +1,301 @@
+
+/* FONTES E RESET BÁSICO */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============ CABEÇALHO E NAVBAR RESPONSIVO ============ */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.navbar-title h1 {
+    font-size: 1.25rem;
+    color: #111827;
+}
+
+.navbar-title h1 strong {
+    font-weight: 900;
+}
+
+/* Esconde os links por padrão e mostra o botão "hambúrguer" */
+.navbar-links {
+    display: none;
+}
+
+.menu-toggle {
+    display: block; /* Visível por padrão em telas pequenas */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Estilos para telas de tablet e desktop (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .menu-toggle {
+        display: none; /* Esconde o botão em telas grandes */
+    }
+
+    .navbar-links {
+        display: block; /* Mostra o menu de links */
+    }
+
+    .navbar-links ul {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #4B5563;
+        text-decoration: none;
+        font-weight: 500;
+        white-space: nowrap;
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navbar-links a:hover {
+        background-color: #F3F4F6;
+        color: #111827;
+    }
+
+    .navbar-links a.active {
+        background-color: #EFF6FF;
+        color: #2563EB;
+        font-weight: 700;
+    }
+}
+
+/* Estilos para a barra lateral (menu de celular) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; /* ALTERADO: Alinhado à direita */
+    height: 100%;
+    width: 280px;
+    background: rgb(255, 158, 158);
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1); /* Sombra ajustada para a esquerda */
+    z-index: 1001;
+    transform: translateX(100%); /* ALTERADO: Esconde a barra para a direita */
+    transition: transform 0.3s ease-in-out;
+    padding: 1.5rem;
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Mostra a barra na posição correta */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.sidebar-header .close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul a {
+    display: block;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.sidebar ul a:hover {
+    background-color: rgb(255, 158, 158);
+}
+
+.sidebar ul a.active {
+    background-color: rgb(255, 158, 158);
+    color: #2563EB;
+    font-weight: 700;
+}
+
+/* ============ SEÇÃO HERO ============ */
+.hero {
+    position: relative;
+    padding: 5rem 1.5rem;
+    text-align: center;
+    background: rgb(255, 74, 246);
+    overflow: hidden; /* Garante que a imagem de fundo não vaze */
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: rgb(243, 0, 231); /* Vermelho */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: black;
+    margin-bottom: 1.5rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    color: black; /* Cinza um pouco mais escuro */
+    line-height: 1.75;
+}
+
+/* Container dos cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* se ajusta sozinho */
+  gap: 25px;
+  justify-items: center;
+  padding: 20px;
+  background-color: rgb(248, 117, 241);
+  padding: 40px;
+}
+
+
+/* Estilo de cada cartão */
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px;
+  width: 100%;
+  max-width: 480px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: all 0.3s ease;
+  position: relative;
+   margin: 10px;
+   margin-top: 90px;
+   margin-bottom: 90px;
+}
+
+/* Ícone dentro do quadrado */
+.icon {
+  background: rgb(255, 107, 248);
+  color:rgb(255, 158, 158);
+  font-size: 2rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* Título e texto do card */
+.card h3 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: #1a202c;
+}
+
+.card p {
+  color: #444;
+  line-height: 1.5;
+  font-size: 1.1rem;
+  margin-bottom: 20px ;
+}
+
+/* Animação ao passar o mouse */
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Container dos cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* se ajusta sozinho */
+  gap: 25px;
+  justify-items: center;
+  padding: 15px;
+   margin: 0;
+   border-top: 100px;
+font-size: 0.99rem;
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 600px) {
+  .card {
+    max-width: 100%;
+  }
+}
+
+/* ============ FOOTER ============ */
+footer {
+    background-color: #1F2937;
+    color: #9CA3AF;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* ============ RESPONSIVIDADE ============ */
+@media (min-width: 768px) {
+    .cards-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .works-container, .intro-topics {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}

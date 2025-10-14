@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap');
+
+/* ======== CONFIGURAÇÕES GERAIS ======== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF2FC;
+  color: #111;
+  overflow-x: hidden; /* Impede rolagem lateral em celulares */
+}
+
+
+/* ============ CABEÇALHO E NAVBAR RESPONSIVO ============ */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.navbar-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.navbar-title h1 {
+    font-size: 1.25rem;
+    color: #111827;
+}
+
+.navbar-title h1 strong {
+    font-weight: 900;
+}
+
+/* Esconde os links por padrão e mostra o botão "hambúrguer" */
+.navbar-links {
+    display: none;
+}
+
+.menu-toggle {
+    display: block; /* Visível por padrão em telas pequenas */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* Estilos para telas de tablet e desktop (a partir de 1024px) */
+@media (min-width: 1024px) {
+    .menu-toggle {
+        display: none; /* Esconde o botão em telas grandes */
+    }
+
+    .navbar-links {
+        display: block; /* Mostra o menu de links */
+    }
+
+    .navbar-links ul {
+        display: flex;
+        list-style: none;
+        gap: 0.5rem;
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-links a {
+        display: block;
+        padding: 0.75rem 1rem;
+        color: #4B5563;
+        text-decoration: none;
+        font-weight: 500;
+        white-space: nowrap;
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .navbar-links a:hover {
+        background-color: #F3F4F6;
+        color: #111827;
+    }
+
+    .navbar-links a.active {
+        background-color: #EFF6FF;
+        color: #2563EB;
+        font-weight: 700;
+    }
+}
+
+/* Estilos para a barra lateral (menu de celular) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0; /* ALTERADO: Alinhado à direita */
+    height: 100%;
+    width: 280px;
+    background: white;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1); /* Sombra ajustada para a esquerda */
+    z-index: 1001;
+    transform: translateX(100%); /* ALTERADO: Esconde a barra para a direita */
+    transition: transform 0.3s ease-in-out;
+    padding: 1.5rem;
+}
+
+.sidebar.open {
+    transform: translateX(0); /* Mostra a barra na posição correta */
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.sidebar-header h3 {
+    font-size: 1.2rem;
+    color: #111827;
+}
+
+.sidebar-header .close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul a {
+    display: block;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.sidebar ul a:hover {
+    background-color: #F3F4F6;
+}
+
+
+/* ======== SEÇÃO INTRO ======== */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+  text-align: center;
+  background: #FEEBFA;
+  padding: 2rem;
+}
+
+.img {
+  width: auto;
+   margin-top: 15px;
+}
+.semester {
+  background: white;
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 12px;
+  display: inline-block;
+   margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.description {
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  color: #444;
+  font-size: 1.5rem;
+  padding-top: 10px;
+}
+
+#exploreBtn {
+  background: #EBDAE8;
+  color: black;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#exploreBtn:hover {
+  background: #CDC1CA;
+}
+
+/* ======== DISCIPLINAS ======== */
+.subjects {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #f5fafe;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.card {
+  background: white;
+  color: black;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.text {
+font-size: 1.2rem;
+padding-bottom: 15px;
+}
+
+.card h3 {
+font-size: 1.5rem;
+padding-bottom: 5px;
+}
+
+.card a{
+  text-decoration: none;
+  background: #EBDAE8;
+  color: black;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card a:hover{
+  background: #CDC1CA;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* ======== RODAPÉ ======== */
+footer {
+  background: #111827;
+  color: #D1D5DB;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ======== RESPONSIVIDADE ======== */
+
+/* Tablets e celulares */
+@media (max-width: 900px) {
+  .title {
+    font-size: 3rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+    display: none; /* Esconde o menu por padrão */
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  nav ul.open {
+    display: flex; /* Exibe quando aberto */
+  }
+
+  .menu-toggle {
+    display: block; /* Mostra o botão */
+  }
+
+  .intro {
+    height: auto;
+    padding: 3rem 1rem;
+  }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.2rem;
+  }
+
+  #exploreBtn {
+    width: 100%;
+  }
+
+  .grid {
+    grid-template-columns: 1fr; /* Uma coluna */
+  }
+}
+

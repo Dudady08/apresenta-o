@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio Escolar - Química</title>
+    <link rel="stylesheet" href="quimica.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                 viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            <h1>Portfólio <strong>2º Ano</strong></h1>
+        </div>
+        
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        
+        <nav class="navbar-links" id="navbar-links">
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="portugues.html">Português</a></li>
+                <li><a href="algebra.html" >Álgebra 2</a></li>
+                <li><a href="fisica.html">Física</a></li>
+                <li><a href="quimica.html" >Química</a></li>
+                <li><a href="filosofia.html">Filosofia</a></li>
+                <li><a href="japones.html">Japonês</a></li>
+                <li><a href="ingles.html">Inglês</a></li>
+                <li><a href="edfisica.html">Ed. Física</a></li>
+                <li><a href="design.html">Design</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <div class="hero-content">
+            <div class="tag">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16.2 2.8a2.5 2.5 0 0 0-3.3-3.3L3 10.2V13h2.8l10.4-10.2z"></path><path d="M12.5 5.5 18 11"></path><path d="M12 14v2.8l7.2-7.2a2.5 2.5 0 0 0-3.3-3.3z"></path><path d="m18 11-5.5 5.5"></path></svg>
+                <span>Química</span>
+            </div>
+            <h1>Fórmula geral dos Hidrocarbonetos</h1>
+            <p>
+                São compostos formados apenas por carbono e hidrogênio. 
+                Eles representam a base da química orgânica e podem se organizar de diferentes formas, 
+                dependendo do tipo de ligação entre os carbonos.
+            </p>
+        </div>
+    </section>
+
+    <main class="content-wrapper">
+        <section class="card-section">
+            <div class="card card-hydrocarbons">
+                <div class="hydrocarbons-title">Hidrocarbonetos</div>
+                <div class="hydrocarbons-grid">
+                    <div class="item">Alcanos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n+2</sub></div>
+                    <div class="item">Alcinos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n-2</sub></div>
+                    <div class="item">Cicloalcanos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n</sub></div>
+                    <div class="item">Cicloalcenos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n-2</sub></div>
+                    <div class="item">Alcenos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n</sub></div>
+                    <div class="item">Alcadienos</div>
+                    <div class="item">C<sub>n</sub>H<sub>2n-2</sub></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="card card-rule">
+                <h2>Não pode ter mais de 4 ligações.</h2>
+                <div class="bond-rule-example">
+                    <p>Ex:</p>
+                    <img class="molecula" src="Group 51.svg" alt="Molécula que não tem mais de 4 ligações">
+                </div>
+            </div>
+        </section>
+
+        <section class="card-section">
+            <div class="card card-mass-calc">
+                <h2>Cálculo de massa molar</h2>
+                <div class="calc-content">
+                    <div class="left-calc">
+                        <p>CaCO<sub>3</sub> = 40 + 12 + 3(16)</p>
+                        <p>MM = 100g/mol</p>
+                        <p>Alcano → MM = 58g/mol</p>
+                        <p>fg = C<sub>n</sub>H<sub>2n</sub> + 2</p>
+                    </div>
+                    <div class="right-calc">
+                        <p>12n + 2n + 2 = 58</p>
+                        <p>14n = 56</p>
+                        <p>n = 56 / 14</p>
+                        <p>n = 4</p>
+                        <div class="result">C4H10</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Portfólio Escolar - 2º Ano do Ensino Médio</p>
+        <p>2º/3º Semestre - 2025</p>
+    </footer>
+    
+    <script src="quimica.js" defer></script>
+</body>
+</html>
