@@ -1,399 +1,397 @@
 /* FONTES E RESET BÁSICO */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Playfair+Display:wght@700&display=swap");
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 main.content-wrapper {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* ============ CABEÇALHO E NAVBAR RESPONSIVO ============ */
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem 1.5rem;
-    background: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .navbar-title {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .navbar-title h1 {
-    font-size: 1.25rem;
-    color: #111827;
+  font-size: 1.25rem;
+  color: #111827;
 }
 
 .navbar-title h1 strong {
-    font-weight: 900;
+  font-weight: 900;
 }
 
-/* Esconde os links por padrão e mostra o botão "hambúrguer" */
 .navbar-links {
-    display: none;
+  display: none;
 }
 
 .menu-toggle {
-    display: block; /* Visível por padrão em telas pequenas */
-    background: none;
-    border: none;
-    font-size: 1.8rem;
-    cursor: pointer;
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-/* Estilos para telas de tablet e desktop (a partir de 1024px) */
 @media (min-width: 1024px) {
-    .menu-toggle {
-        display: none; /* Esconde o botão em telas grandes */
-    }
+  .menu-toggle {
+    display: none;
+  }
 
-    .navbar-links {
-        display: block; /* Mostra o menu de links */
-    }
+  .navbar-links {
+    display: block;
+  }
 
-    .navbar-links ul {
-        display: flex;
-        list-style: none;
-        gap: 0.5rem;
-        margin: 0;
-        padding: 0;
-    }
+  .navbar-links ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+  }
 
-    .navbar-links a {
-        display: block;
-        padding: 0.75rem 1rem;
-        color: #4B5563;
-        text-decoration: none;
-        font-weight: 500;
-        white-space: nowrap;
-        border-radius: 8px;
-        transition: all 0.2s ease-in-out;
-    }
+  .navbar-links a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #4b5563;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap;
+    border-radius: 8px;
+    transition: all 0.2s ease-in-out;
+  }
 
-    .navbar-links a:hover {
-        background-color: #F3F4F6;
-        color: #111827;
-    }
+  .navbar-links a:hover {
+    background-color: #f3f4f6;
+    color: #111827;
+  }
 
-    .navbar-links a.active {
-        background-color: #EFF6FF;
-        color: #2563EB;
-        font-weight: 700;
-    }
+  .navbar-links a.active {
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-weight: 700;
+  }
 }
 
-/* Estilos para a barra lateral (menu de celular) */
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0; /* ALTERADO: Alinhado à direita */
-    height: 100%;
-    width: 280px;
-    background: white;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.1); /* Sombra ajustada para a esquerda */
-    z-index: 1001;
-    transform: translateX(100%); /* ALTERADO: Esconde a barra para a direita */
-    transition: transform 0.3s ease-in-out;
-    padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 280px;
+  background: white;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  padding: 1.5rem;
 }
 
 .sidebar.open {
-    transform: translateX(0); /* Mostra a barra na posição correta */
+  transform: translateX(0);
 }
 
 .sidebar-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .sidebar-header h3 {
-    font-size: 1.2rem;
-    color: #111827;
+  font-size: 1.2rem;
+  color: #111827;
 }
 
 .sidebar-header .close-btn {
-    font-size: 2rem;
-    cursor: pointer;
-    background: none;
-    border: none;
-    line-height: 1;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1;
 }
 
 .sidebar ul {
-    list-style: none;
+  list-style: none;
 }
 
 .sidebar ul a {
-    display: block;
-    padding: 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #374151;
-    font-weight: 500;
-    transition: 0.2s;
+  display: block;
+  padding: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: 0.2s;
 }
 
 .sidebar ul a:hover {
-    background-color: #F3F4F6;
+  background-color: #f3f4f6;
 }
 
 /* ============ SEÇÃO HERO ============ */
 .hero {
-    padding: 5rem 1.5rem;
-    text-align: center;
-    color: black;
-    background: rgba(255, 175, 47, 1);
+  padding: 5rem 1.5rem;
+  text-align: center;
+  color: black;
+  background: rgba(255, 175, 47, 1);
 }
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    background-color: rgb(255, 157, 0); 
-    color: white;
-    padding: 0.75rem 1.5rem;
-    border-radius: 9999px;
-    margin-bottom: 1.5rem;
-    font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgb(255, 157, 0);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
 }
 .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
 }
 
 .hero p {
-    font-size: 1.45rem;
-    color: black; /* Verde bem claro */
-    max-width: 48rem;
-    line-height: 1.75;
+  font-size: 1.45rem;
+  color: black;
+  max-width: 48rem;
+  line-height: 1.75;
 }
 
 /* ============ SEÇÕES DE CONTEÚDO PRINCIPAL (CARD-SECTIONS) ============ */
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza os cards */
-    padding: 3rem 1.5rem;
-    gap: 2rem; /* Espaçamento entre os cards */
-    background-color: #f0f0f0; /* Fundo para a área dos cards */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+  background-color: #ffd700; /* fundo dourado */
 }
 
 .card-section {
-    width: 100%;
-    max-width: 900px; /* Largura máxima para os cards */
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  justify-content: center;
 }
 
 .card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border: 8px solid #FFD700; /* Borda amarela */
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: auto;
+  border: none; /* 🔸 remove bordas */
 }
 
 /* --- Estilos para o Card de Hidrocarbonetos --- */
 .card-hydrocarbons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hydrocarbons-title {
-    background-color: rgba(255, 191, 88, 0.7); /* Cinza claro */
-    color: #1F2937; /* Texto escuro */
-    padding: 1rem 2rem;
-    border-radius: 0.5rem;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem; /* Espaço abaixo do título */
-    width: fit-content; /* Ajusta a largura ao conteúdo */
+  background-color: rgba(255, 191, 88, 0.7);
+  color: #1f2937;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
 }
 
 .hydrocarbons-grid {
-    display: grid;
-    grid-template-columns: repeat(6, auto); /* 6 colunas, largura automática */
-    gap: 1rem; /* Espaço entre os itens */
-    align-items: center;
-    justify-content: center; /* Centraliza o grid */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 700px;
 }
 
 .hydrocarbons-grid .item {
-    background-color: rgba(255, 191, 88, 0.7); /* Cinza claro */
-    color: #1F2937; /* Texto escuro */
-    padding: 0.75rem 1.2rem;
-    border-radius: 0.5rem;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-    white-space: nowrap; /* Impede quebras de linha */
+  background-color: rgba(255, 191, 88, 0.7);
+  color: #1f2937;
+  padding: 0.75rem 1.2rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
-
-/* Posicionamento manual dos itens na grade para replicar o layout da imagem */
-.hydrocarbons-grid .item:nth-child(1) { grid-area: 1 / 1; } /* Alcanos */
-.hydrocarbons-grid .item:nth-child(2) { grid-area: 1 / 2; } /* CnH2n+2 */
-.hydrocarbons-grid .item:nth-child(3) { grid-area: 1 / 3; } /* Alcinos */
-.hydrocarbons-grid .item:nth-child(4) { grid-area: 1 / 4; } /* CnH2n-2 */
-.hydrocarbons-grid .item:nth-child(5) { grid-area: 1 / 5; } /* Cicloalcanos */
-.hydrocarbons-grid .item:nth-child(6) { grid-area: 1 / 6; } /* CnH2n */
-
-.hydrocarbons-grid .item:nth-child(7) { grid-area: 2 / 1; } /* Cicloalcenos */
-.hydrocarbons-grid .item:nth-child(8) { grid-area: 2 / 2; } /* CnH2n-2 */
-.hydrocarbons-grid .item:nth-child(9) { grid-area: 2 / 3; } /* Alcenos */
-.hydrocarbons-grid .item:nth-child(10) { grid-area: 2 / 4; } /* CnH2n */
-.hydrocarbons-grid .item:nth-child(11) { grid-area: 2 / 5; } /* Alcadienos */
-.hydrocarbons-grid .item:nth-child(12) { grid-area: 2 / 6; } /* CnH2n-2 */
-
 
 /* --- Estilos para o Card de Regra de Ligações --- */
 .card-rule {
-    text-align: left;
-    padding: 1.5rem;
+  text-align: left;
+  padding: 1.5rem;
 }
 .card-rule h2 {
-    font-size: 1.5rem;
-    color: #1F2937;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
-
 .bond-rule-example {
-    display: flex; /* Torna a div um container flexível */
-    align-items: center; /* Alinha verticalmente "Ex:" e a imagem */
-    gap: 0.5rem; /* Espaço entre o texto e a imagem */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-
 .bond-rule-example p {
-    font-size: 2.3rem;
-    margin: 0; /* Remove margem padrão do parágrafo */
+  font-size: 2.3rem;
+  margin: 0;
 }
 
-
-.card-rule img {
-    max-width: 200px; /* Reduz o tamanho máximo da imagem */
-    height: auto;
-    display: block; /* Garante que a imagem se comporte como um bloco */
+/* --- CORREÇÃO DE TAMANHO DA IMAGEM --- */
+.card-rule img.molecula {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  display: block;
 }
-
 
 /* --- Estilos para o Card de Cálculo de Massa Molar --- */
 .card-mass-calc {
-    padding: 1.5rem;
-    text-align: left;
+  padding: 1.5rem;
+  text-align: left;
 }
 .card-mass-calc h2 {
-    font-size: 1.5rem;
-    color: #1F2937;
-    margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 1rem;
 }
 .calc-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-    flex-wrap: wrap; /* Permite quebras de linha em telas pequenas */
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
-.left-calc, .right-calc {
-    flex: 1;
-    min-width: 250px; /* Garante que os blocos não fiquem muito estreitos */
+.left-calc,
+.right-calc {
+  flex: 1;
+  min-width: 250px;
 }
-.left-calc p, .right-calc p {
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: black;
+.left-calc p,
+.right-calc p {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: black;
 }
 .result {
-    background-color: rgba(255, 191, 88, 0.7); /* Laranja claro */
-    color: black; /* Laranja escuro */
-    padding: 0.8rem 1.5rem;
-    border-radius: 2rem;
-    font-weight: 700;
-    font-size: 1.5rem;
-    text-align: center;
-    width: fit-content;
-    margin-top: 1.5rem;
-    margin-left: auto; /* Alinha à direita na coluna */
+  background-color: rgba(255, 191, 88, 0.7);
+  color: black;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-align: center;
+  width: fit-content;
+  margin-top: 1.5rem;
+  margin-left: auto;
 }
-
 
 /* ============ FOOTER ============ */
 footer {
-    background-color: #1F2937;
-    color: #9CA3AF;
-    text-align: center;
-    padding: 2rem;
+  background-color: #1f2937;
+  color: #9ca3af;
+  text-align: center;
+  padding: 2rem;
 }
 
 /* ============ RESPONSIVIDADE ============ */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .hero p {
-        font-size: 1rem;
-    }
-    .hydrocarbons-grid {
-        grid-template-columns: repeat(2, auto); /* Ajusta para 2 colunas em telas menores */
-        justify-content: space-around;
-    }
-    /* Limpa o grid-area para mobile, permitindo que o fluxo padrão funcione */
-    .hydrocarbons-grid .item:nth-child(odd) { grid-column: 1; }
-    .hydrocarbons-grid .item:nth-child(even) { grid-column: 2; }
-    
-    .card-rule img {
-        max-width: 80px; /* Reduz ainda mais a imagem em telas menores */
-    }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .hydrocarbons-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hydrocarbons-grid .item {
+    grid-area: auto !important;
+  }
+
+  .card-rule img.molecula {
+    max-width: 180px;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    .hydrocarbons-grid {
-        grid-template-columns: 1fr; /* Uma coluna por item em telas muito pequenas */
-    }
-    /* Reajuste para coluna única */
-    .hydrocarbons-grid .item { grid-column: 1 !important; }
-    
-    .category-title, .group-item, .formula-item {
-        font-size: 0.9rem;
-        padding: 0.6rem 1rem;
-    }
-    .card-rule h2, .card-mass-calc h2 {
-        font-size: 1.3rem;
-    }
-    .card-rule p, .left-calc p, .right-calc p {
-        font-size: 0.9rem;
-    }
-    .result {
-        font-size: 1.2rem;
-        padding: 0.6rem 1rem;
-    }
-    
-    .bond-rule-example {
-        flex-direction: column; /* Em telas muito pequenas, empilha texto e imagem */
-        align-items: flex-start;
-    }
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .hydrocarbons-grid {
+    grid-template-columns: 1fr;
+  }
+  .category-title,
+  .group-item,
+  .formula-item {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+  .card-rule h2,
+  .card-mass-calc h2 {
+    font-size: 1.3rem;
+  }
+  .card-rule p,
+  .left-calc p,
+  .right-calc p {
+    font-size: 0.9rem;
+  }
+  .result {
+    font-size: 1.2rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .bond-rule-example {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* --- Ajuste extra para telas grandes --- */
+@media (min-width: 1024px) {
+  .content-wrapper {
+    background-color: #ffd700;
+  }
+  .hydrocarbons-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
 }
