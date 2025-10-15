@@ -9,7 +9,7 @@
 
 body {
   color: #4b5563;
-  background-color: #f0f9ff;
+  background-color: rgb(255, 255, 120);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -140,7 +140,7 @@ main.content-wrapper {
 .hero {
   padding: 5rem 1.5rem;
   text-align: center;
-  background-image: linear-gradient(to bottom right, #ecfeff, #f0f9ff, #e0e7ff);
+  background: rgba(252, 252, 52, 0.859);
 }
 .hero-content {
   display: flex;
@@ -153,7 +153,7 @@ main.content-wrapper {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: #0891b2; /* Ciano */
+  background-color: rgb(234, 234, 0); /* Ciano */
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
@@ -161,20 +161,14 @@ main.content-wrapper {
   font-weight: 700;
 }
 .hero h1 {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 4rem;
+  font-size: 4.5rem;
   font-weight: 900;
   color: #1f2937;
   margin-bottom: 1.5rem;
 }
-.hero h2 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #0e7490; /* Ciano escuro */
-  margin-bottom: 1rem;
-}
+
 .hero p {
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   line-height: 1.75;
 }
 
@@ -185,41 +179,25 @@ main.content-wrapper {
   justify-content: center;
 }
 
-.video-section {
-  width: 100%;
-  max-width: 900px;
-}
 
 .card {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border-radius: 1.5rem;
   padding: 2rem;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07);
 }
 
 .card h2 {
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 700;
   color: #111827;
   text-align: center;
   margin-bottom: 2rem;
 }
 
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* Proporção 16:9 para o vídeo */
-  background-color: #f0f0f0;
-  border-radius: 1rem;
-  overflow: hidden;
-}
-
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+.my {
+  font-size: 1.6rem;
+  color: black;
 }
 
 /* ============ FOOTER ============ */

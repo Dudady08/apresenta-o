@@ -1,17 +1,14 @@
-// Aguarda o carregamento completo do HTML
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Seleciona os elementos do menu
+    
+    // --- CÓDIGO DO MENU MOBILE (Sem alterações) ---
     const menuToggle = document.getElementById('menu-toggle');
     const navbarLinks = document.getElementById('navbar-links');
 
-    // Cria a barra lateral (sidebar) dinamicamente
-    const sidebar = document.createElement('aside');
-    sidebar.className = 'sidebar';
-    sidebar.id = 'sidebar';
+    if (menuToggle && navbarLinks) {
+        const sidebar = document.createElement('aside');
+        sidebar.className = 'sidebar';
+        sidebar.id = 'sidebar';
 
-    // Clona os links da navbar para dentro da sidebar
-    if (navbarLinks) {
         const linksHtml = navbarLinks.innerHTML;
         sidebar.innerHTML = `
             <div class="sidebar-header">
@@ -21,38 +18,45 @@ document.addEventListener('DOMContentLoaded', function() {
             ${linksHtml}
         `;
         document.body.appendChild(sidebar);
+        
+        const closeBtn = document.getElementById('close-btn');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.add('open');
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+            });
+        }
     }
     
-    // Seleciona o botão de fechar dentro da sidebar criada
-    const closeBtn = document.getElementById('close-btn');
+    // --- CÓDIGO DO FILTRO CORRIGIDO ---
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const designCards = document.querySelectorAll('.design-card');
 
-    // Função para abrir a sidebar
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                sidebarElement.classList.add('open');
-            }
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove a classe 'active' de todos os botões
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Adiciona a classe 'active' apenas ao botão clicado
+            button.classList.add('active');
+
+            const filter = button.getAttribute('data-filter');
+
+            designCards.forEach(card => {
+                // ALTERAÇÃO AQUI: Pega a string de categorias e a transforma em uma lista (array)
+                // Ex: "web criacao" vira ["web", "criacao"]
+                const categories = card.getAttribute('data-category').split(' ');
+
+                // ALTERAÇÃO AQUI: Verifica se o filtro é 'all' OU se a lista de categorias do card INCLUI o filtro
+                if (filter === 'all' || categories.includes(filter)) {
+                    card.style.display = 'block'; // Mostra o card
+                } else {
+                    card.style.display = 'none'; // Esconde o card
+                }
+            });
         });
-    }
-
-    // Função para fechar a sidebar
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                sidebarElement.classList.remove('open');
-            }
-        });
-    }
-
-    // Opcional: Fechar a sidebar se clicar fora dela
-    document.addEventListener('click', function(event) {
-        const sidebarElement = document.getElementById('sidebar');
-        // Se o clique foi fora da sidebar e não no botão de abrir
-        if (sidebarElement && !sidebarElement.contains(event.target) && !menuToggle.contains(event.target)) {
-            sidebarElement.classList.remove('open');
-        }
     });
-
 });

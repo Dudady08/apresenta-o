@@ -72,8 +72,7 @@ main.container {
     font-weight: 700;
 }
 .hero h1 {
-    font-family: 'Space Grotesk', sans-serif; /* Manteve a fonte específica para o h1 do hero */
-    font-size: 4.5rem;
+   font-size: 4.5rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
 }

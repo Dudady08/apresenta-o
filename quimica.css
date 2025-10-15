@@ -177,7 +177,6 @@ main.content-wrapper {
   font-weight: 700;
 }
 .hero h1 {
-  font-family: "Playfair Display", serif;
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -197,7 +196,7 @@ main.content-wrapper {
   align-items: center;
   padding: 3rem 1.5rem;
   gap: 2rem;
-  background-color: #ffd700; /* fundo dourado */
+  background: rgb(255, 193, 92); /* fundo dourado */
 }
 
 .card-section {
@@ -389,7 +388,7 @@ footer {
 /* --- Ajuste extra para telas grandes --- */
 @media (min-width: 1024px) {
   .content-wrapper {
-    background-color: #ffd700;
+    background: rgb(255, 198, 106);
   }
   .hydrocarbons-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));

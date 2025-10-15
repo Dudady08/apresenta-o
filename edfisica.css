@@ -8,9 +8,9 @@
 
 /* VARIÁVEIS DE COR AZUL */
 :root {
-    --main-blue: #4EAAFF;
+
     --dark-blue: #258CDA; /* Azul escuro para hover/destaque */
-    --light-blue-bg: #E3F2FF; /* Azul muito claro para fundo */
+    --light-blue-bg: #2695f7; /* Azul muito claro para fundo */
     --border-light: #BEE3F8; /* Borda mais clara */
 }
 
@@ -153,11 +153,6 @@
     background-color: #F3F4F6;
 }
 
-.sidebar ul a.active {
-    background-color: #EFF6FF;
-    color: #2563EB;
-    font-weight: 700;
-}
 
 body {
     color: #374151;
@@ -175,10 +170,9 @@ body {
 .hero-background {
     position: absolute;
     inset: 0;
+    background: #023195;
     /* Mantive o background de esporte, mas o opacity está baixo */
-    background-image: url('https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600');
-    background-size: cover;
-    background-position: center;
+    
     opacity: 0.1;
     z-index: 1;
 }
@@ -197,7 +191,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: var(--main-blue); /* NOVO: Azul */
+    background: blue; 
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
@@ -206,20 +200,17 @@ body {
 }
 
 .hero h1 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 900;
-    color: #1F2937;
+    color: black;
     margin-bottom: 1.5rem;
 }
 
-.hero .highlight {
-    color: var(--dark-blue); /* NOVO: Azul escuro no destaque */
-}
+
 
 .hero p {
     font-size: 1.25rem;
-    color: #374151;
+    color: black;
     line-height: 1.75;
 }
 
@@ -279,63 +270,76 @@ section h2 {
 }
 
 /* Seção Galeria de Vídeos */
-.gallery-container {
-    background-color: white;
-    border-radius: 1.5rem;
-    padding: 2rem;
-    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.07);
+.video-gallery {
+  background-color: #3b82f6;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.gallery-header {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom: 1rem;
+.gallery-container {
+  text-align: center;
+  color: #000;
+  
 }
-.gallery-header svg { color: var(--main-blue); } /* NOVO: Ícone azul */
-.gallery-header h2 { margin-bottom: 0; text-align: left;}
+
+.gallery-header h2 {
+  font-size: 2.5rem;
+  color: #000;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
 
 .gallery-description {
-    margin-bottom: 2rem;
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
 }
 
+/* Mantém o fundo grande, mas organiza os vídeos menores */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* Cartões individuais */
 .video-placeholder {
-    aspect-ratio: 16 / 9;
-    border-radius: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem;
-    text-align: center;
-    color: white;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 1rem;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-.video-placeholder svg { opacity: 0.8; margin-bottom: 0.75rem; }
-.video-placeholder h4 { font-size: 0.9rem; font-weight: 600; }
-.video-placeholder .video-note { font-size: 0.75rem; opacity: 0.8; margin-top: 0.5rem; }
 
-/* NOVO: Cores azuis e gradientes para placeholders de vídeo */
-.bg-blue-1 { background-image: linear-gradient(to bottom right, #3B82F6, #60A5FA); }
-.bg-blue-2 { background-image: linear-gradient(to bottom right, #1D4ED8, #3B82F6); }
-.bg-blue-3 { background-image: linear-gradient(to bottom right, #1E40AF, #2563EB); }
+.video-placeholder:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.35);
+}
 
-.info-box {
-    /* Mantenho a classe info-box caso seja usada em outro lugar,
-       mas removi a seção info-box do HTML conforme solicitado.
-    */
-    background-color: var(--light-blue-bg);
-    border: 1px solid var(--border-light);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+/* Vídeos responsivos */
+.video-placeholder iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  border-radius: 0.5rem;
+  border: none;
 }
-.info-box code {
-    background-color: #D1E9FF;
-    padding: 0.125rem 0.25rem;
-    border-radius: 0.25rem;
-    font-size: 0.8rem;
+
+/* Texto dos títulos */
+.video-placeholder h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 0.5rem;
+  color: #000;
 }
+
+/* Mantém o degrade colorido */
+
 
 /* FOOTER */
 footer {
