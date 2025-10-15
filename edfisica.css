@@ -9,9 +9,9 @@
 /* VARIÁVEIS DE COR AZUL */
 :root {
 
-    --dark-blue: #258CDA; /* Azul escuro para hover/destaque */
-    --light-blue-bg: #2695f7; /* Azul muito claro para fundo */
-    --border-light: #BEE3F8; /* Borda mais clara */
+    --dark-blue: rgb(0, 135, 0); /* Azul escuro para hover/destaque */
+    --light-blue-bg: rgb(0, 216, 0); /* Azul muito claro para fundo */
+    --border-light: rgb(0, 104, 0); /* Borda mais clara */
 }
 
 /* ============ CABEÇALHO E NAVBAR RESPONSIVO ============ */
@@ -170,7 +170,7 @@ body {
 .hero-background {
     position: absolute;
     inset: 0;
-    background: #023195;
+    background: green;
     /* Mantive o background de esporte, mas o opacity está baixo */
     
     opacity: 0.1;
@@ -191,7 +191,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background: blue; 
+    background: rgb(0, 98, 0); 
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
@@ -211,7 +211,7 @@ body {
 .hero p {
     font-size: 1.25rem;
     color: black;
-    line-height: 1.75;
+    line-height: 1.5;
 }
 
 /* ============ CONTEÚDO PRINCIPAL ============ */
@@ -271,7 +271,7 @@ section h2 {
 
 /* Seção Galeria de Vídeos */
 .video-gallery {
-  background-color: #3b82f6;
+  background-color: rgb(0, 163, 0);
   padding: 2rem;
   border-radius: 1rem;
   max-width: 1200px;
@@ -307,7 +307,7 @@ section h2 {
 
 /* Cartões individuais */
 .video-placeholder {
-  background: rgba(255, 255, 255, 0.1);
+  background: green;
   padding: 1rem;
   border-radius: 1rem;
   text-align: center;

@@ -2,15 +2,15 @@
 
 /* ======== CONFIGURAÇÕES GERAIS ======== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  background: #FFF2FC;
-  color: #111;
-  overflow-x: hidden; /* Impede rolagem lateral em celulares */
+    background: #FFF2FC;
+    color: #111;
+    overflow-x: hidden; /* Impede rolagem lateral em celulares */
 }
 
 
@@ -42,27 +42,25 @@ body {
     font-weight: 900;
 }
 
-/* Esconde os links por padrão e mostra o botão "hambúrguer" */
 .navbar-links {
     display: none;
 }
 
 .menu-toggle {
-    display: block; /* Visível por padrão em telas pequenas */
+    display: block;
     background: none;
     border: none;
     font-size: 1.8rem;
     cursor: pointer;
 }
 
-/* Estilos para telas de tablet e desktop (a partir de 1024px) */
 @media (min-width: 1024px) {
     .menu-toggle {
-        display: none; /* Esconde o botão em telas grandes */
+        display: none;
     }
 
     .navbar-links {
-        display: block; /* Mostra o menu de links */
+        display: block;
     }
 
     .navbar-links ul {
@@ -96,23 +94,22 @@ body {
     }
 }
 
-/* Estilos para a barra lateral (menu de celular) */
 .sidebar {
     position: fixed;
     top: 0;
-    right: 0; /* ALTERADO: Alinhado à direita */
+    right: 0;
     height: 100%;
     width: 280px;
     background: white;
-    box-shadow: -4px 0 15px rgba(0,0,0,0.1); /* Sombra ajustada para a esquerda */
+    box-shadow: -4px 0 15px rgba(0,0,0,0.1);
     z-index: 1001;
-    transform: translateX(100%); /* ALTERADO: Esconde a barra para a direita */
+    transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     padding: 1.5rem;
 }
 
 .sidebar.open {
-    transform: translateX(0); /* Mostra a barra na posição correta */
+    transform: translateX(0);
 }
 
 .sidebar-header {
@@ -156,163 +153,144 @@ body {
 
 /* ======== SEÇÃO INTRO ======== */
 .intro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 85vh;
-  text-align: center;
-  background: #FEEBFA;
-  padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh; /* Usa min-height para ser mais flexível */
+    text-align: center;
+    background: #FEEBFA;
+    padding: 2rem;
 }
 
-.img {
-  width: auto;
-   margin-top: 15px;
+.intro-content img { /* Seletor mais específico para a imagem */
+    width: auto;
+    max-width: 100%; /* Garante que a imagem não ultrapasse a tela */
+    margin-top: 15px;
 }
+
 .semester {
-  background: white;
-  font-size: 1.2rem;
-  padding: 8px 16px;
-  border-radius: 12px;
-  display: inline-block;
-   margin-top: 25px;
+    background: white;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    margin-top: 25px;
     margin-bottom: 10px;
 }
 
 .description {
-  max-width: 600px;
-  margin: 0 auto 1.5rem;
-  color: #444;
-  font-size: 1.5rem;
-  padding-top: 10px;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    color: #444;
+    font-size: 1.5rem;
+    padding-top: 10px;
 }
 
 #exploreBtn {
-  background: #EBDAE8;
-  color: black;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+    background: #EBDAE8;
+    color: black;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 #exploreBtn:hover {
-  background: #CDC1CA;
+    background: #CDC1CA;
 }
 
 /* ======== DISCIPLINAS ======== */
 .subjects {
-  padding: 4rem 2rem;
-  text-align: center;
-  color: #f5fafe;
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f5fafe; /* Adicionei uma cor de fundo para esta seção */
 }
 
+.section-header h2 {
+    font-size: 2rem;
+    color: #111;
+    margin-bottom: 0.5rem;
+}
+
+.section-header p {
+    color: #555;
+    margin-bottom: 2.5rem;
+}
+
+
 .grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 1200px; /* Limita a largura máxima da grade */
+    margin: 0 auto; /* Centraliza a grade */
 }
 
 .card {
-  background: white;
-  color: black;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
+    background: white;
+    color: black;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .text {
-font-size: 1.2rem;
-padding-bottom: 15px;
+    font-size: 1.2rem;
+    padding-bottom: 15px;
 }
 
 .card h3 {
-font-size: 1.5rem;
-padding-bottom: 5px;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
 }
 
 .card a{
-  text-decoration: none;
-  background: #EBDAE8;
-  color: black;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.3s;
+    text-decoration: none;
+    background: #EBDAE8;
+    color: black;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .card a:hover{
-  background: #CDC1CA;
+    background: #CDC1CA;
 }
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
 
 .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 /* ======== RODAPÉ ======== */
 footer {
-  background: #111827;
-  color: #D1D5DB;
-  text-align: center;
-  padding: 2rem;
+    background: #111827;
+    color: #D1D5DB;
+    text-align: center;
+    padding: 2rem;
 }
 
 /* ======== RESPONSIVIDADE ======== */
-
-/* Tablets e celulares */
-@media (max-width: 900px) {
-  .title {
-    font-size: 3rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0;
-    display: none; /* Esconde o menu por padrão */
-    background: white;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 200px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  }
-
-  nav ul.open {
-    display: flex; /* Exibe quando aberto */
-  }
-
-  .menu-toggle {
-    display: block; /* Mostra o botão */
-  }
-
-  .intro {
-    height: auto;
-    padding: 3rem 1rem;
-  }
-}
-
-/* Telas pequenas (celulares) */
 @media (max-width: 600px) {
-  .title {
-    font-size: 2.2rem;
-  }
+    .description {
+        font-size: 1.2rem; /* Reduz a fonte da descrição em telas pequenas */
+    }
 
-  #exploreBtn {
-    width: 100%;
-  }
+    #exploreBtn {
+        width: 100%;
+    }
 
-  .grid {
-    grid-template-columns: 1fr; /* Uma coluna */
-  }
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
-

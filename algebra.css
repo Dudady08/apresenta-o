@@ -45,17 +45,10 @@ body {
     padding: 5rem 1.5rem;
     text-align: center;
     color: white;
-    background: #33cfaf;
+    background: #0000a4;
     overflow: hidden;
 }
-.hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    opacity: 0.1;
-    background-image: repeating-linear-gradient(0deg, transparent, transparent 49px, rgba(255,255,255,0.5) 49px, rgba(255,255,255,0.5) 50px), 
-                      repeating-linear-gradient(90deg, transparent, transparent 49px, rgba(255,255,255,0.5) 49px, rgba(255,255,255,0.5) 50px);
-}
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -67,7 +60,7 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
-    background-color: #1c957d;
+    background-color: #050061;
     color: white;
     padding: 0.75rem 1.5rem;
     border-radius: 9999px;
@@ -78,11 +71,11 @@ body {
     font-size: 4.5rem;
     font-weight: 900;
     margin-bottom: 1.5rem;
-    color: black;
+    color: white;
 }
 .hero p {
     font-size: 1.25rem;
-    color: black;
+    color: white;
     max-width: 48rem;
     line-height: 1.75;
 }
@@ -93,6 +86,7 @@ body {
     justify-content: center;
     padding: 2rem;
     flex-grow: 1;
+    background: #2e2eff;
 }
 
 .logarithms-content {
@@ -109,10 +103,10 @@ body {
     border-radius: 1.5rem;
     padding: 2rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-    border: 1px solid #BFEAFB;
+    border: 1px solid #0004ff;
 }
 .top-section {
-    background-color: #CFFAFE;
+    background-color: #3943fe;
     border-radius: 1rem;
     padding: 1.5rem;
     margin-bottom: 2rem;
@@ -151,7 +145,7 @@ body {
 
 /* Caixa de cada exemplo */
 .example-box {
-    background-color: #CFFAFE;
+    background-color: #3943fe;
     border-radius: 1rem;
     padding: 1.5rem;
     flex-grow: 1;       /* PERMITE QUE OS CARDS CRESÇAM */

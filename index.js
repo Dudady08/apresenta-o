@@ -1,17 +1,15 @@
 // Aguarda o carregamento completo do HTML
 document.addEventListener('DOMContentLoaded', function() {
 
-    // Seleciona os elementos do menu
+    // --- CÓDIGO DO MENU MOBILE (Existente) ---
     const menuToggle = document.getElementById('menu-toggle');
     const navbarLinks = document.getElementById('navbar-links');
 
-    // Cria a barra lateral (sidebar) dinamicamente
-    const sidebar = document.createElement('aside');
-    sidebar.className = 'sidebar';
-    sidebar.id = 'sidebar';
+    if (menuToggle && navbarLinks) {
+        const sidebar = document.createElement('aside');
+        sidebar.className = 'sidebar';
+        sidebar.id = 'sidebar';
 
-    // Clona os links da navbar para dentro da sidebar
-    if (navbarLinks) {
         const linksHtml = navbarLinks.innerHTML;
         sidebar.innerHTML = `
             <div class="sidebar-header">
@@ -21,38 +19,31 @@ document.addEventListener('DOMContentLoaded', function() {
             ${linksHtml}
         `;
         document.body.appendChild(sidebar);
+        
+        const closeBtn = document.getElementById('close-btn');
+
+        menuToggle.addEventListener('click', function() {
+            sidebar.classList.add('open');
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function() {
+                sidebar.classList.remove('open');
+            });
+        }
     }
     
-    // Seleciona o botão de fechar dentro da sidebar criada
-    const closeBtn = document.getElementById('close-btn');
+    // --- CÓDIGO CORRIGIDO PARA O BOTÃO "EXPLORAR MATÉRIAS" ---
+    const exploreBtn = document.getElementById('exploreBtn');
+    const materiasSection = document.getElementById('materias');
 
-    // Função para abrir a sidebar
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                sidebarElement.classList.add('open');
-            }
+    if (exploreBtn && materiasSection) {
+        exploreBtn.addEventListener('click', function() {
+            // A função scrollIntoView rola a página até o elemento
+            materiasSection.scrollIntoView({
+                behavior: 'smooth' // Rola suavemente em vez de pular direto
+            });
         });
     }
-
-    // Função para fechar a sidebar
-    if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-            const sidebarElement = document.getElementById('sidebar');
-            if (sidebarElement) {
-                sidebarElement.classList.remove('open');
-            }
-        });
-    }
-
-    // Opcional: Fechar a sidebar se clicar fora dela
-    document.addEventListener('click', function(event) {
-        const sidebarElement = document.getElementById('sidebar');
-        // Se o clique foi fora da sidebar e não no botão de abrir
-        if (sidebarElement && !sidebarElement.contains(event.target) && !menuToggle.contains(event.target)) {
-            sidebarElement.classList.remove('open');
-        }
-    });
 
 });

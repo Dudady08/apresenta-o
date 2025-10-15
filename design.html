@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfólio - Meus Designs</title>
     <link rel="stylesheet" href="design.css" />
+    <link rel="icon" href="./simbulo/" type="image/svg+xml">
 </head>
 <body>
-    <header class="navbar">
+     <header class="navbar">
         <div class="navbar-title">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
             </svg>
             <h1>Portfólio <strong>2º Ano</strong></h1>
         </div>
         
-        <button class="menu-toggle" id="menu-toggle">☰</button>
+       <button class="menu-toggle" id="menu-toggle">☰</button>
         
         <nav class="navbar-links" id="navbar-links">
             <ul>
@@ -38,7 +41,6 @@
         <div class="hero-background-blur"></div>
         <div class="hero-content">
             <div class="tag">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.69 5.66 5.66a8 8 0 1 1-11.31 0L12 2.69z"></path></svg>
                 <span>Design</span>
             </div>
             <h1>Arte & Criatividade</h1>
@@ -277,6 +279,18 @@
         <p>Portfólio Escolar - 2º Ano do Ensino Médio</p>
         <p>2º/3º Semestre - 2025</p>
     </footer>
+
+    <div id="design-modal" class="modal">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="close-btn">&times;</button>
+            <img src="" alt="Imagem do Design" id="modal-image">
+            <div class="modal-info">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+                <div id="modal-tags" class="card-tags"></div>
+            </div>
+        </div>
+    </div>
     
     <script src="design.js" defer></script>
 </body>

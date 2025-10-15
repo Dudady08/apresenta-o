@@ -157,7 +157,7 @@
   position: relative;
   padding: 5rem 1.5rem;
   text-align: center;
-  background: rgb(255, 74, 246);
+  background: rgb(23, 23, 23);
   overflow: hidden; /* Garante que a imagem de fundo não vaze */
 }
 
@@ -175,8 +175,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  background-color: rgb(243, 0, 231); /* Vermelho */
-  color: white;
+  background-color: rgb(0, 0, 0); /* Vermelho */
+  color: goldenrod;
   padding: 0.75rem 1.5rem;
   border-radius: 9999px;
   margin-bottom: 1.5rem;
@@ -184,16 +184,15 @@
 }
 
 .hero h1 {
-  font-family: "Playfair Display", serif;
   font-size: 3.5rem;
   font-weight: 700;
-  color: black;
+  color: goldenrod;
   margin-bottom: 1.5rem;
 }
 
 .hero p {
   font-size: 1.25rem;
-  color: black; /* Cinza um pouco mais escuro */
+  color: goldenrod; /* Cinza um pouco mais escuro */
   line-height: 1.75;
 }
 
@@ -207,13 +206,13 @@
   gap: 25px;
   justify-items: center;
   padding: 20px;
-  background-color: rgb(248, 117, 241);
+  background-color: rgba(0, 0, 0, 0.876);
   padding: 40px;
 }
 
 /* Estilo de cada cartão */
 .card {
-  background: white;
+  background: black;
   border-radius: 20px;
   padding: 50px;
   width: 100%;
@@ -229,7 +228,7 @@
 
 /* Ícone dentro do quadrado */
 .icon {
-  background: rgb(255, 107, 248);
+  background: rgb(21, 21, 21);
   color: rgb(255, 158, 158);
   font-size: 2rem;
   width: 55px;
@@ -245,11 +244,15 @@
 .card h3 {
   font-size: 1.7rem;
   margin-bottom: 10px;
-  color: #1a202c;
+  color: goldenrod;
+}
+
+.card li {
+  color: goldenrod;
 }
 
 .card p {
-  color: #444;
+  color: goldenrod;
   line-height: 1.5;
   font-size: 1.1rem;
   margin-bottom: 20px;
